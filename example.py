@@ -1,2 +1,4 @@
 from cinemaparse import Kinoparser
-Kinoparser.exstract_raw_content()
+
+KP = Kinoparser()
+KP.exstract_raw_content()
