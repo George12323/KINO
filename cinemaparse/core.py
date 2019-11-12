@@ -29,10 +29,10 @@ class Kinoparser:
         list_of_all_films = list()
         all_films = self.data.find_all("div", class_="movie-plate")
         for film in all_films:
-            list_of_all_films.append(film["attr-title"])
+          list_of_all_films.append(film["attr-title"])
 
-        return list_of_all_films[1:-1]
-     def get_film_nearest_session(self, film):
+        return list_of_all_films[1:-1]     
+        
         page = requests.get('https://{}.subscity.ru/'.format(self.town))
         soup = BeautifulSoup(page.text, 'html.parser')
         names = soup.find_all(class_="movie-plate")
