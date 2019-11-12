@@ -32,7 +32,8 @@ class Kinoparser:
           list_of_all_films.append(film["attr-title"])
 
         return list_of_all_films[1:-1]     
-        
+    
+    def get_films_nearest_session():   
         page = requests.get('https://{}.subscity.ru/'.format(self.town))
         soup = BeautifulSoup(page.text, 'html.parser')
         names = soup.find_all(class_="movie-plate")
