@@ -1,4 +1,3 @@
-from cinemaparse import Kinoparser
-
-KP = Kinoparser(self, city)
+from cinemaparse import core
+KP = core.Kinoparser(self, city)
 KP.exstract_raw_content()
