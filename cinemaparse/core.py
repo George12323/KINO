@@ -26,14 +26,16 @@ class Kinoparser:
     def get_films_list(self):
         """This function display list of films"""
 
-        list_of_all_films = list()
-        all_films = self.data.find_all("div", class_="movie-plate")
-        for film in all_films:
-          list_of_all_films.append(film["attr-title"])
-
+        elf.extract_raw_content()
+        self.beauty = BeautifulSoup(self.content, 'html.parser')
+        films = []
+        all_films = self.beauty.find_all("div", class_='movie-plate')
+        for i in all_films:
+            films.append(i["attr-title"])
+        return films
         return list_of_all_films[1:-1]     
     
-    def get_films_nearest_session():   
+    def get_film_nearest_session():   
         page = requests.get('https://{}.subscity.ru/'.format(self.town))
         soup = BeautifulSoup(page.text, 'html.parser')
         names = soup.find_all(class_="movie-plate")
