@@ -30,8 +30,8 @@ class Kinoparser:
         self.beauty = BeautifulSoup(self.content, 'html.parser')
         films = []
         all_films = self.beauty.find_all("div", class_='movie-plate')
-        for every_film in all_films:
-            films.append(every_film["attr-title"])
+        for film_information in all_films:
+            films.append(film_information["attr-title"])
         return films
         return list_of_all_films[1:-1]     
     
